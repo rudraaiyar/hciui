@@ -1,9 +1,0 @@
-.grid-1 {
-  display:grid;
-  grid-template-columns: 1fr;
-  grid-auto-rows: auto;
-}
-
-::placeholder {
-  color: gray;
-}
