@@ -1,154 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-  <link rel="stylesheet" type="text/css" href="./style.css">
-  <script src='./script.js'> </script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <title>Reddit</title>
 </head>
+
 <body>
-  <header class='grid-1'>
-    <ul>
-      <li class='my-subs'><strong>MY SUBREDDITS</strong></li>
-      <li>-</li>
-      <li id='red-hack'>HOME</li>
-      <li>-</li>
-      <li>POPULAR</li>
-      <li>-</li>
-      <li>ALL</li>
-      <li>-</li>
-      <li>RANDOM</li>
-      <li>-</li>
-      <li>USERS</li>
-      <li>|</li>
-      <li>UCMERCED</li>
-      <li>-</li>
-      <li>HCI</li>
-      <li>-</li>
-      <li>SCHOOLRULES</li>
-      <li>-</li>
-      <li>REDDIT</li>
-      <li>-</li>
-      <li>NEWTUBERS</li>
-      <li>-</li>
-      <li>JS</li>
-      <li>-</li>
-      <li>HTML</li>
-      <li>-</li>
-      <li>CSS</li>
-      <li>-</li>
-      <li><strong>EDIT</strong></li>
-    </ul>
-  </header>
-  <nav class='grid-3'>
-    <img src='./reddit.png' alt='REDDIT' class='reddit-pic'>
-    <div>
-      <ul>
-        <li id='hot-hack'>hot</li>
-        <li>new</li>
-        <li>rising</li>
-        <li>controversial</li>
-        <li>top</li>
-        <li>gilded</li>
-        <li>wiki</li>
-      </ul>
+    
+  <nav class="navbar navbar-dark bg-primary mb-3">
+    <div class="container">
+      <span class="navbar-brand">Reddit</span>
     </div>
-    <div class='profile-ops'>
-      <div>
-        <ul>
-          <li>hcistuff</li>
-          <li>(9,000) |</li>
-          <li><strong>preferences |</strong></li>
-          <li>logout</li>
-        </ul>
-      </div>
-  </div>
   </nav>
-  <div id="main" class='grid-20-10-1'>
-    <div>
-        <div class='search-container'>
-      <button class='user-action-button'>Submit a new link</button>
-      </div>
-      <div class='search-container'>
-      <button class='user-action-button'>Submit a new text post</button>
-      </div>
-      <div class='search-container'>
-      <button class='user-action-button'>Create your own subreddit</button>
-      </div>
-      
-      <div class="post">
-        <div class='post-number'>1</div>
-        <div class='post-upvotes'>
-          <div class="arrow up" onclick='vote()' id='upvote'></div>
-          <div id='votes'>1459</div>
-          <div class="arrow down" onclick='votedown()' id='downvote'></div>
+  <div id="search-container" class="container">
+    <div id="search" class="card card-body bg-light mb-2">
+      <h4>Search Reddit</h4>
+      <form id="search-form">
+        <div class="form-group">
+          <input type="text" id="search-input" class="form-control mb-3" placeholder="Search Term...">
         </div>
-
-        <div class='post-body'>
-          <a href='#' class='post-title'>Learn HTML/CSS , And JavaScript By Creating Reddit</a>
-          <span class='post-location'>(what.is)</span>
-          <p>submitted 10 hours ago* by <a class='submit-link' href='#'>hcistuff</a> to <a class='submit-link' href='#'>/r/human </a></p>
-          <div class='post-options'>
-            <span>150 comments</span>
-            <span>share</span>
-            <span>save</span>
-            <span>hide</span>
-            <span>report</span>
-            <span>crosspost</span>
-          </div>
+        <div class="form-check form-check-inline">
+          Sort By:
+          <input class="form-check-input ml-2" type="radio" name="sortby" value="relevance" checked>
+          <label class="form-check-label">
+            Relevance
+          </label>
         </div>
-          
-          
-      </div>
-        <div class="post">
-        <div class='post-number'>2</div>
-        <div class='post-upvotes'>
-          <div class="arrow up" onclick='vote()' id='upvote'></div>
-          <div id='votes'>1459</div>
-          <div class="arrow down" onclick='votedown()' id='downvote'></div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="sortby" value="new">
+          <label class="form-check-label">
+            Latest
+          </label>
         </div>
-
-        <div class='post-body'>
-          <a href='#' class='post-title'>Learn HTML/CSS , And JavaScript By Creating Reddit</a>
-          <span class='post-location'>(what.is)</span>
-          <p>submitted 10 hours ago* by <a class='submit-link' href='#'>hcistuff</a> to <a class='submit-link' href='#'>/r/human </a></p>
-          <div class='post-options'>
-            <span>150 comments</span>
-            <span>share</span>
-            <span>save</span>
-            <span>hide</span>
-            <span>report</span>
-            <span>crosspost</span>
-          </div>
+        <h5 class="mt-2">Limit: </h5>
+        <div class="form-group">
+          <select name="limit" id="limit" class="form-control">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="25" selected>25</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+          </select>
         </div>
-             
-      </div>
-        
+        <button type="submit" class="btn btn-dark btn-block mt-4">Search</button>
+      </form>
     </div>
-      
-    <!--
-    <div class='search-container'>
-      <input placeholder='search' class='search-text-input'>
-      <button class='search-button'>
-        <a href='#'><img id='magnifier' src='./search.png'></a>
-      </button>
-      <button class='user-action-button'>Submit a new link</button>
-      <button class='user-action-button'>Submit a new text post</button>
-      <button class='user-action-button'>Create your own subreddit</button>
-    </div>  
-
-    <div></div>    
-      -->
-      
-    <div class='search-container'>
-      <input placeholder='search' class='search-text-input'>
-    </div>
-      
-    <div></div> 
-      
+    <div id="results"></div>
   </div>
- 
+  <script src="./index.js"></script>
 </body>
+
 </html>
