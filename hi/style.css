@@ -35,7 +35,7 @@
 
 .grid-20-10-1 {
   display:grid;
-  grid-template-columns: 35fr 15fr 20fr;
+  grid-template-columns: 30fr 15fr 20fr;
   grid-auto-rows: auto;
 }
 
@@ -120,8 +120,8 @@ nav > div > ul > li {
 
 .search-container {
   margin-top: 1em;
-  display: inline-block;
-  width: 250px;
+  display: inline;
+  width: 350px;
 
 }
 
